@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-container label {
+        display: block;
+        margin-top: 10px;
+      }
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .form-container textarea {
+        resize: vertical;
+      }
+      .form-container input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .form-container input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .success-message {
+        color: green;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-container" class="form-container">
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL000003UCfN"
+        method="POST"
+      >
+        <input type="hidden" name="orgid" value="00DdL000003UCfN" />
+        <input
+          type="hidden"
+          name="retURL"
+          value="file:///D:/Citi/SalesForceEndToEnd/successPage.html"
+        />
+
+        <label for="name">Contact Name</label>
+        <input id="name" maxlength="80" name="name" size="20" type="text" />
+
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" size="20" type="text" />
+
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+
+        <label for="subject">Subject</label>
+        <input
+          id="subject"
+          maxlength="80"
+          name="subject"
+          size="20"
+          type="text"
+        />
+
+        <label for="description">Description</label>
+        <textarea name="description"></textarea>
+
+        <label for="company">Company</label>
+        <input
+          id="company"
+          maxlength="80"
+          name="company"
+          size="20"
+          type="text"
+        />
+
+        <label for="type">Type</label>
+        <select id="type" name="type">
+          <option value="">--None--</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Structural">Structural</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          <option value="">--None--</option>
+          <option value="New">New</option>
+          <option value="Working">Working</option>
+          <option value="Escalated">Escalated</option>
+          <option value="Closed">Closed</option>
+        </select>
+
+        <label for="reason">Case Reason</label>
+        <select id="reason" name="reason">
+          <option value="">--None--</option>
+          <option value="Installation">Installation</option>
+          <option value="Equipment Complexity">Equipment Complexity</option>
+          <option value="Performance">Performance</option>
+          <option value="Breakdown">Breakdown</option>
+          <option value="Equipment Design">Equipment Design</option>
+          <option value="Feedback">Feedback</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority">
+          <option value="">--None--</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <input type="submit" name="submit" />
+      </form>
+    </div>
+    <div id="success-message" class="success-message" style="display: none">
+      Your case has been successfully submitted!
+    </div>
+  </body>
+</html>
